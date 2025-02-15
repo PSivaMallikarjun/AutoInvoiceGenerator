@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="invoice-container">
+        <header>
+            <h1>Invoice</h1>
+            <div class="company-details">
+                <p>Company Name</p>
+                <p>Address Line 1</p>
+                <p>Address Line 2</p>
+                <p>Email: </p>
+                <p>Phone: </p>
+            </div>
+        </header>
+        <section class="client-details">
+            <h2>Bill To:</h2>
+            <input type="text" id="clientName" placeholder="Client Name">
+            <input type="text" id="clientAddress" placeholder="Client Address">
+            <input type="email" id="clientEmail" placeholder="Client Email">
+        </section>
+        <section class="invoice-details">
+            <table id="invoiceTable">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Invoice items will be added here dynamically -->
+                </tbody>
+            </table>
+            <button id="addItem">Add Item</button>
+        </section>
+        <section class="totals">
+            <p>Subtotal: <span id="subtotal">0.00</span></p>
+            <p>Tax (10%): <span id="tax">0.00</span></p>
+            <p>Total: <span id="total">0.00</span></p>
+        </section>
+        <button id="generatePDF">Download PDF</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
